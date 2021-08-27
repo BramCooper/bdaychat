@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./stylesheets/style.css">
+    <link rel="shortcut icon" href="#">
+</head>
+
+<body>
+    <h1>login page</h1>
+
+    <section>
+        <h2 class="title">Log in</h2>
+
+        <form id="loginForm" method="POST">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" class="input--text" name="username" id="username" required />
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input type="password" class="input--text" name="password" id="password" required />
+            </div>
+
+            <button type="submit" class="submitBtn">Log in</button>
+        </form>
+
+        <div class="alert hidden"></div>
+
+        <div id="errorMessages"></div>
+    </section>
+
+    <script src="./Javascript/login.js"></script>
+</body>
+
+</html>

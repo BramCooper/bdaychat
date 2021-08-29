@@ -49,7 +49,7 @@ primus.on('data', (json) => {
 });
 
 /*add todo by enter*/
-let input = document.querySelector(".chatInput");
+let input = document.querySelector("#chatInput");
 input.addEventListener("keyup", e => {
     if (e.keyCode === 13) {
         // on enter
@@ -83,8 +83,7 @@ input.addEventListener("keyup", e => {
 });
 
 let appendChat = (json) => {
-    let chat = `<div class="chat">
-    <input data-id="${json.data.chat._id}" type="checkbox">  
+    let chat = `<div class="chat"> 
     <div>${json.data.chat.text}</div>
     <a href="#" data-id="${json.data.chat._id}">delete</a>
 </div>`;

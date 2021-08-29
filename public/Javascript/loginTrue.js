@@ -46,7 +46,7 @@ primus.on('data', (json) => {
     if (json.action === "addChat") {
         appendChat(json.data);
     }
-})
+});
 
 /*add todo by enter*/
 let input = document.querySelector(".chatInput");

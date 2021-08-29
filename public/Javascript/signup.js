@@ -4,7 +4,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let firstName = document.querySelector('#firstName').value;
     let lastName = document.querySelector('#lastName').value;
     let username = document.querySelector('#username').value;
-    let birthday = document.querySelector("#birthday").value;
+    let birthday = document.querySelector('#birthday').value;
     let email = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
 
@@ -26,15 +26,11 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
 
     }).then(json => {
         if (json.status === "success") {
-
             let token = json.data.token;
             localStorage.setItem("token", token);
             window.location.href = "index.html";
 
         }
-        /*else {
-            console.log("failed");}*/
-
     })
         .catch((error) => {
             console.error("Error:", error);

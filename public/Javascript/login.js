@@ -1,7 +1,6 @@
 var submitBtn = document.querySelector(".submitBtn").addEventListener('click', (e) => {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-
     e.preventDefault();
     console.log(username);
 
@@ -23,10 +22,11 @@ var submitBtn = document.querySelector(".submitBtn").addEventListener('click', (
         if (json.status === "success") {
             feedback.textContent = "Welcome";
             feedback.classList.remove('hidden');
-
+            let birthday = json.data.birthday;
             let token = json.data.token;
             localStorage.setItem("token", token);
-            window.location.href = "index.html";
+            localStorage.setItem("birthday", birthday);
+            window.location.href = `index/${birthday}`;
 
             console.log("success");
         } else {

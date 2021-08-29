@@ -49,13 +49,14 @@ const login = async (req, res, next) => {
 
         let token = jwt.sign({
             uid: result.user._id,
-            username: result.user.username
+            username: result.user.username,
         }, "MyVerySecretWord"); //config.get('jwt.secret')
 
         return res.json({
             "status": "success",
             "data": {
-                "token": token
+                "token": token,
+                "birthday": result.user.birthday
             }
         });
 

@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const chatSchema = new Schema({
-    text: String,
-    user: String
+    text: {
+        type: String
+    },
+    username: {
+        type: String
+    }
 
 });
 const Chat = mongoose.model('Chat', chatSchema);

@@ -2,7 +2,7 @@ const Chat = require('../../../models/Chat');
 
 
 const getAll = (req, res) => {
-    Chat.find({ "user": "randomNaam" }, (err, docs) => {
+    Chat.find({ "user": req.user._id }, (err, docs) => {
         if (!err) {
             res.json({
                 "status": "success",
@@ -17,7 +17,7 @@ const getAll = (req, res) => {
 const create = (req, res, next) => {
     let chat = new Chat();
     chat.text = req.body.text;
-    chat.user = req.body.user;
+    chat.user = req.user._id;
     chat.save((err, doc) => {
         if (err) {
             res.json({

@@ -14,7 +14,7 @@
         console.log("rip");
     }); */
 
-fetch("http://localhost:3000/users/loginTrue", {  // http://localhost:3000/users/loginTrue
+/* fetch("http://localhost:3000/users/loginTrue", {  // http://localhost:3000/users/loginTrue
     method: "GET",
     headers: {
         "Content-Type": "application/json",
@@ -31,4 +31,18 @@ fetch("http://localhost:3000/users/loginTrue", {  // http://localhost:3000/users
     })
     .catch((error) => {
         window.location.href = "login";
-    });
+    }); */
+
+fetch("http://localhost:3000/api/v1/chats", {
+    'headers': {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("token")
+    }
+}).then(result => {
+    return result.json();
+}).then(json => {
+    console.log(json);
+}).catch(err => {
+    console.log("wrong")
+    window.location.href = "login.html";
+});

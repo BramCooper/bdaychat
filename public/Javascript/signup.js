@@ -4,10 +4,9 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let firstName = document.querySelector('#firstName').value;
     let lastName = document.querySelector('#lastName').value;
     let username = document.querySelector('#username').value;
+    let birthday = document.querySelector("#birthday").value;
     let email = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
-
-    console.log(firstName, lastName, username, email, password);
 
     fetch('http://localhost:3000/users/signup', {
         method: "post",
@@ -18,6 +17,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
             firstName: firstName,
             lastName: lastName,
             username: username,
+            birthday: birthday,
             email: email,
             password: password
         })
@@ -26,7 +26,6 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
 
     }).then(json => {
         if (json.status === "success") {
-            console.log("gelukt!");
 
             let token = json.data.token;
             localStorage.setItem("token", token);

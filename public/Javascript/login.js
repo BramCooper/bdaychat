@@ -5,7 +5,7 @@ var submitBtn = document.querySelector(".submitBtn").addEventListener('click', (
     e.preventDefault();
     console.log(username);
 
-    fetch("http://localhost:3000/users/login", {  // http://localhost:3000
+    fetch("http://localhost:3000/users/login", {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

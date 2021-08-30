@@ -47,6 +47,35 @@ body {
   background-color: rgb(20, 74, 189);
 }
 
+.alert{
+  color: rgb(170, 16, 16);
+  text-align: center;
+  margin-top: 1em;
+}
+
+.chat{
+  border: 3px solid rgb(20, 74, 189);
+  background-color: rgb(20, 74, 189);
+  border-radius: 0.4em;
+  margin: 0.5em;
+  line-height: 2em;
+  padding-left: 0.5em;
+}
+.chat__text{
+  font-size: large;
+  color: aliceblue;
+}
+
+.chat__username{
+  color: rgb(189, 189, 189);
+}
+
+.input__chat{
+  width: 95%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
 .hidden{
   display: none;
 }

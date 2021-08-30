@@ -38,8 +38,7 @@ body {
   border: 2px solid rgba(163, 10, 10, 0.849);
   background-color: rgb(170, 16, 16);
   padding: 0.2em;
-  display: block;
-  margin-left: 80%;
+  margin: 0;
 }
 
 .btn__switch{
@@ -74,6 +73,11 @@ body {
   width: 95%;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+}
+
+.grid_container{
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
 .hidden{

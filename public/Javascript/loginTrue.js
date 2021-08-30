@@ -13,7 +13,7 @@ primus.on('data', (json) => {
     }
 });
 
-/*redirect*/
+/*redirect if there isn't a token*/
 if (!localStorage.getItem('token')) {
     window.location.href = "login.html";
 }

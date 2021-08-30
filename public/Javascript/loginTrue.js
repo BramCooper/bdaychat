@@ -48,6 +48,7 @@ primus.on('data', (json) => {
     }
 });
 
+/*redirect*/
 if (!localStorage.getItem('token')) { //doesn't work yet? not sure why
     window.location.href = "login.html";
 }
@@ -93,10 +94,10 @@ let appendChat = (json) => {
     let chat = `<div class="chat"> 
         <div>${json.data.chats.text}</div>
         </div>`;
-    document.querySelector(".newChat").insertAdjacentHTML('beforebegin', chat);
+    document.querySelector(".newChat").insertAdjacentHTML('afterend', chat);
 }
 
-fetch("http://localhost:3000/api/v1/chats", { //getAll werkt nog niet, nog oproepen
+fetch("http://localhost:3000/api/v1/chats", { //werkt niet, doet zelfde als redirect hierboven, blijft refreshen.
     'headers': {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("token")

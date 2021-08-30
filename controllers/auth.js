@@ -27,7 +27,8 @@ const signup = async (req, res, next) => {
         res.json({
             "status": "success",
             "data": {
-                "token": token
+                "token": token,
+                "birthday": birthday
             }
         })
     }).catch(error => {

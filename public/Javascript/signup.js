@@ -27,8 +27,10 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     }).then(json => {
         if (json.status === "success") {
             let token = json.data.token;
+            let birthday = json.data.birthday;
             localStorage.setItem("token", token);
-            window.location.href = "index.html";
+            localStorage.setItem("birthday", birthday);
+            window.location.href = `index/${birthday}`;
 
         }
     })

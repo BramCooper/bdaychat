@@ -7,7 +7,7 @@ const getAll = (req, res) => {
             res.json({
                 "status": "success",
                 "data": {
-                    "chats": docs
+                    "chats": docs //chat of chats? is wel chats in db
                 }
             });
         }
@@ -29,7 +29,7 @@ const create = (req, res, next) => {
             res.json({
                 "status": "success",
                 "data": {
-                    "chats": doc
+                    "chats": doc //chat of chats? is wel chats in db
                 }
             });
         }

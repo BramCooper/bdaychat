@@ -48,13 +48,18 @@ primus.on('data', (json) => {
     }
 });
 
+if (!localStorage.getItem('token')) { //doesn't work yet? not sure why
+    window.location.href = "login.html";
+}
+
 /*add todo by enter*/
 let input = document.querySelector("#chatInput");
-input.addEventListener("keyup", e => {
+input.addEventListener("keydown", e => {
     if (e.keyCode === 13) {
         // on enter
         let text = input.value;
-        fetch("http://localhost:3000/api/v1/chats", {
+        let birthday = localStorage.getItem('birthday'); //json.data.birthday werkt ook niet
+        fetch(`http://localhost:3000/api/v1/chats`, { //http://localhost:3000/index/${birthday}
             method: "post",
             'headers': {
                 'Content-Type': 'application/json',
@@ -79,18 +84,19 @@ input.addEventListener("keyup", e => {
             }).catch(err => {
                 console.log(err)
             })
+        e.preventDefault();
     }
+
 });
 
 let appendChat = (json) => {
     let chat = `<div class="chat"> 
-    <div>${json.data.chat.text}</div>
-    <a href="#" data-id="${json.data.chat._id}">delete</a>
-</div>`;
+        <div>${json.data.chats.text}</div>
+        </div>`;
     document.querySelector(".newChat").insertAdjacentHTML('beforebegin', chat);
 }
 
-fetch("http://localhost:3000/api/v1/chats", {
+fetch("http://localhost:3000/api/v1/chats", { //getAll werkt nog niet, nog oproepen
     'headers': {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("token")

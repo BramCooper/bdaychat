@@ -22,9 +22,10 @@ body {
   margin-top: 1em;
 }
 
-.btn a{
+.btn__text{
   text-decoration: none;
   color: whitesmoke;
+  font-weight:lighter;
 }
 
 .btn:hover{
@@ -37,7 +38,6 @@ body {
   border: 2px solid rgba(163, 10, 10, 0.849);
   background-color: rgb(170, 16, 16);
   padding: 0.2em;
-  font-weight:lighter;
   display: block;
   margin-left: 80%;
 }

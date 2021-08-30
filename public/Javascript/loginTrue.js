@@ -60,7 +60,7 @@ input.addEventListener("keydown", e => {
         // on enter
         let text = input.value;
         let birthday = localStorage.getItem('birthday'); //json.data.birthday werkt ook niet
-        fetch(`http://localhost:3000/api/v1/chats`, { //http://localhost:3000/index/${birthday}
+        fetch(`http://localhost:3000/api/v1/chats`, {
             method: "post",
             'headers': {
                 'Content-Type': 'application/json',
@@ -92,7 +92,8 @@ input.addEventListener("keydown", e => {
 
 let appendChat = (json) => {
     let chat = `<div class="chat"> 
-        <div>${json.data.chats.text}</div>
+        <div class="chatText">${json.data.chats.text}</div>
+        <div class="chatUsername">${json.data.chats.username}</div>
         </div>`;
     document.querySelector(".newChat").insertAdjacentHTML('afterend', chat);
 }

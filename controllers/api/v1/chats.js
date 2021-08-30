@@ -7,7 +7,7 @@ const getAll = (req, res) => {
             res.json({
                 "status": "success",
                 "data": {
-                    "chats": docs //chat of chats? is wel chats in db
+                    "chats": docs
                 }
             });
         }
@@ -18,6 +18,7 @@ const create = (req, res, next) => {
     let chat = new Chat();
     chat.text = req.body.text;
     chat.user = req.user._id;
+    chat.username = req.user.username;
     chat.save((err, doc) => {
         if (err) {
             res.json({
@@ -29,7 +30,7 @@ const create = (req, res, next) => {
             res.json({
                 "status": "success",
                 "data": {
-                    "chats": doc //chat of chats? is wel chats in db
+                    "chats": doc
                 }
             });
         }

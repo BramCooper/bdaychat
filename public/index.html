@@ -5,18 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 
 <body>
+    <button class="btn btn__logout"><a href="#" class="logoutClick">Log out</a></button>
     <h1>Welcome to your chat</h1>
     <div class="addChat">
         <form action="" method="POST">
-            <input type="text" name="chatInput" id="chatInput" placeholder="type your message" required />
+            <input class="input__text" type="text" name="chatInput" id="chatInput" placeholder="type your message"
+                required />
         </form>
     </div>
     <div class="newChat"></div>
-
 
     <script src="http://localhost:3000/primus/primus.js"></script>
     <script src="../Javascript/loginTrue.js"></script>

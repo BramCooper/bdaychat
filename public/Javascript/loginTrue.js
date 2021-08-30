@@ -49,7 +49,7 @@ primus.on('data', (json) => {
 });
 
 /*redirect*/
-if (!localStorage.getItem('token')) { //doesn't work yet? not sure why
+if (!localStorage.getItem('token')) {
     window.location.href = "login.html";
 }
 
@@ -90,7 +90,7 @@ input.addEventListener("keydown", e => {
 
 });
 
-/* fetch(`http://localhost:3000/api/v1/chats`, {
+/*fetch(`http://localhost:3000/api/v1/chats`, {
     method: "get",
     'headers': {
         'Content-Type': 'application/json',
@@ -100,7 +100,6 @@ input.addEventListener("keydown", e => {
     return result.json();
 }).then(json => {
     json.data.chats.forEach(chats => {
-        console.log(json);
         let newChat = `<div class="chat"> 
         <div class="chatText">${json.data.chats.text}</div>
         <div class="chatUsername">${json.data.chats.username}</div>
@@ -109,7 +108,7 @@ input.addEventListener("keydown", e => {
     })
 }).catch(err => {
     console.log(err)
-}) */
+})*/
 
 let appendChat = (json) => {
     let chat = `<div class="chat"> 
@@ -119,7 +118,7 @@ let appendChat = (json) => {
     document.querySelector(".newChat").insertAdjacentHTML('afterend', chat);
 }
 
-fetch("http://localhost:3000/api/v1/chats", { //werkt niet, doet zelfde als redirect hierboven, blijft refreshen.
+fetch("http://localhost:3000/api/v1/chats", {
     'headers': {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("token")
@@ -131,4 +130,10 @@ fetch("http://localhost:3000/api/v1/chats", { //werkt niet, doet zelfde als redi
 }).catch(err => {
     console.log(err)
     window.location.href = "login.html";
+});
+
+document.querySelector(".logoutClick").addEventListener("click", e => {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+    e.preventDefault();
 });

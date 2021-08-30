@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/index/:birthday', function (req, res, next) {
+router.get('/:birthday', function (req, res, next) {
   res.sendFile('index.html', { root: "public" });
 });
 

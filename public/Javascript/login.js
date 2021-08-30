@@ -26,7 +26,7 @@ var submitBtn = document.querySelector(".submitBtn").addEventListener('click', (
             let token = json.data.token;
             localStorage.setItem("token", token);
             localStorage.setItem("birthday", birthday);
-            window.location.href = `index/${birthday}`;
+            window.location.href = `/${birthday}`;
 
             console.log("success");
         } else {

@@ -2,7 +2,7 @@ const Chat = require('../../../models/Chat');
 
 
 const getAll = (req, res) => {
-    Chat.find({ "user": req.user._id }, (err, docs) => {
+    Chat.find({ "birthday": req.user.birthday }, (err, docs) => {
         if (!err) {
             res.json({
                 "status": "success",

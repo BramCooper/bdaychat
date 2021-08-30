@@ -90,6 +90,27 @@ input.addEventListener("keydown", e => {
 
 });
 
+/* fetch(`http://localhost:3000/api/v1/chats`, {
+    method: "get",
+    'headers': {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('token')
+    }
+}).then(result => {
+    return result.json();
+}).then(json => {
+    json.data.chats.forEach(chats => {
+        console.log(json);
+        let newChat = `<div class="chat"> 
+        <div class="chatText">${json.data.chats.text}</div>
+        <div class="chatUsername">${json.data.chats.username}</div>
+        </div>`;
+        document.querySelector(".newChat").insertAdjacentHTML('afterend', newChat);
+    })
+}).catch(err => {
+    console.log(err)
+}) */
+
 let appendChat = (json) => {
     let chat = `<div class="chat"> 
         <div class="chatText">${json.data.chats.text}</div>
@@ -108,6 +129,6 @@ fetch("http://localhost:3000/api/v1/chats", { //werkt niet, doet zelfde als redi
 }).then(json => {
     console.log(json);
 }).catch(err => {
-    console.log("wrong")
+    console.log(err)
     window.location.href = "login.html";
 });

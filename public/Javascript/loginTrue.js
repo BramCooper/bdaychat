@@ -1,5 +1,5 @@
 // PRIMUS LIVE
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect("https://bdayfinder-app.herokuapp.com", {
     reconnect: {
         max: Infinity // Number: The max delay before we try to reconnect.
         , min: 500 // Number: The minimum delay before we try reconnect.
@@ -25,7 +25,7 @@ input.addEventListener("keydown", e => {
         // on enter
         let text = input.value;
         let birthday = localStorage.getItem('birthday');
-        fetch(`http://localhost:3000/api/v1/chats`, {
+        fetch(`https://bdayfinder-app.herokuapp.com/api/v1/chats`, {
             method: "post",
             'headers': {
                 'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ let appendChat = (json) => {
     document.querySelector(".newChat").insertAdjacentHTML('afterend', chat);
 }
 
-fetch("http://localhost:3000/api/v1/chats", {
+fetch("https://bdayfinder-app.herokuapp.com/api/v1/chats", {
     'headers': {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("token")

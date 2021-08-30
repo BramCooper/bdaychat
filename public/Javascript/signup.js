@@ -8,7 +8,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let email = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
 
-    fetch('http://localhost:3000/users/signup', {
+    fetch('https://bdayfinder-app.herokuapp.com/users/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

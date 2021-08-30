@@ -4,7 +4,7 @@ var submitBtn = document.querySelector(".submitBtn").addEventListener('click', (
     e.preventDefault();
     console.log(username);
 
-    fetch("http://localhost:3000/users/login", {
+    fetch("https://bdayfinder-app.herokuapp.com/users/login", {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

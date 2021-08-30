@@ -30,7 +30,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
             let birthday = json.data.birthday;
             localStorage.setItem("token", token);
             localStorage.setItem("birthday", birthday);
-            window.location.href = `index/${birthday}`;
+            window.location.href = `/${birthday}`;
 
         }
     })

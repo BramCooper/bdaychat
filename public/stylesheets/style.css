@@ -24,8 +24,8 @@ body {
 
 .btn__text{
   text-decoration: none;
-  color: whitesmoke;
   font-weight:lighter;
+  color: whitesmoke;
 }
 
 .btn:hover{
@@ -40,6 +40,11 @@ body {
   padding: 0.2em;
   display: block;
   margin-left: 80%;
+}
+
+.btn__switch{
+  border: 2px solid rgb(255, 255, 255);
+  background-color: rgb(20, 74, 189);
 }
 
 .hidden{

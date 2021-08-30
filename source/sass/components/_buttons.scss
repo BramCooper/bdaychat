@@ -1,0 +1,36 @@
+.btn{
+    display: block;
+    margin:auto;
+    border-radius: 0.3em;
+    border: 2px solid rgb(20, 74, 189);
+    background-color: rgb(255, 255, 255);
+    padding: 0.5em;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+  
+  .btn__text{
+    text-decoration: none;
+    font-weight:lighter;
+    color: whitesmoke;
+  }
+  
+  .btn:hover{
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(197, 236, 251);
+    color: black;
+  }
+  
+  .btn__logout{
+    border: 2px solid rgba(163, 10, 10, 0.849);
+    background-color: rgb(170, 16, 16);
+    padding: 0.2em;
+    display: block;
+    margin-left: 80%;
+  }
+  
+  .btn__switch{
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(20, 74, 189);
+  }
+  
